@@ -1,0 +1,10 @@
+<% title "Course" %>
+
+<% for course in @courses %>
+  <div class="course">
+    <h2><%= link_to course.title, course %></h2>
+    Paintings: <%= course.students.size %>
+  </div>
+<% end %>
+
+<p><%= link_to "New Course", new_course_path %></p>

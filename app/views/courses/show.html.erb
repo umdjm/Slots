@@ -1,0 +1,21 @@
+<% title @course.title %>
+
+<div id="students">
+  <% for student in @course.students %>
+    <div class="student">
+      <%= image_tag student.image_url(:thumb) if student.image? %>
+      <div class="name"><%= student.name %></div>
+      <div class="actions">
+        <%= link_to "edit", edit_student_path(student) %> |
+        <%= link_to "remove", student, :confirm => 'Are you sure?', :method => :delete %>
+      </div>
+    </div>
+  <% end %>
+  <div class="clear"></div>
+</div>
+
+<p>
+  <%= link_to "Add a Student", new_student_path(:course_id => @course) %> |
+  <%= link_to "Remove Course", @course, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View Courses", courses_path %>
+</p>

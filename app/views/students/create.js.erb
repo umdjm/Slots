@@ -1,0 +1,5 @@
+<% if @student.new_record? %>
+  alert("Failed to upload student: <%= j @student.errors.full_messages.join(', ').html_safe %>");
+<% else %>
+  $("#students").append("<%= j render(@student) %>");
+<% end %>

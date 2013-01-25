@@ -1,0 +1,8 @@
+<div class="student">
+  <%= link_to image_tag(student.image_url(:thumb)), student if student.image? %>
+  <div class="name"><%= student.name %></div>
+  <div class="actions">
+    <%= link_to "edit", edit_student_path(student) %> |
+    <%= link_to "remove", student, :confirm => 'Are you sure?', :method => :delete %>
+  </div>
+</div>

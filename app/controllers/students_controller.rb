@@ -3,14 +3,12 @@ class StudentsController < ApplicationController
     @student = Student.new(:course_id => params[:course_id])
   end
 
+  def show
+    @student = Student.find(params[:id])
+  end
+
   def create
-    @student = Student.new(params[:student])
-    if @student.save
-      flash[:notice] = "Successfully created student."
-      redirect_to @student.course
-    else
-      render :action => 'new'
-    end
+    @student = Student.create(params[:student])
   end
 
   def edit

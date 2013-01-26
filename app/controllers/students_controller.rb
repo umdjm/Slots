@@ -1,4 +1,8 @@
 class StudentsController < ApplicationController
+  
+  before_filter :authorize
+
+
   def new
     @student = Student.new(:course_id => params[:course_id])
   end

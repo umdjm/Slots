@@ -1,18 +1,20 @@
 class CoursesController < ApplicationController
+  before_filter :authorize
+
   def index
-    @courses = Course.all
+    @courses = @current_user.courses
   end
 
   def show
-    @course = Course.find(params[:id])
+    @course = @current_user.courses.find(params[:id])
   end
 
   def new
-    @course = Course.new
+    @course = @current_user.courses.build
   end
 
   def create
-    @course = Course.new(params[:course])
+    @course = @current_user.courses.build(params[:course])
     if @course.save
       redirect_to @course, :notice => "Successfully created course."
     else
@@ -21,11 +23,11 @@ class CoursesController < ApplicationController
   end
 
   def edit
-    @course = Course.find(params[:id])
+    @course = @current_user.courses.find(params[:id])
   end
 
   def update
-    @course = Course.find(params[:id])
+    @course = @current_user.courses.find(params[:id])
     if @course.update_attributes(params[:course])
       redirect_to @course, :notice  => "Successfully updated course."
     else
@@ -34,7 +36,7 @@ class CoursesController < ApplicationController
   end
 
   def destroy
-    @course = Course.find(params[:id])
+    @course = @current_user.courses.find(params[:id])
     @course.destroy
     redirect_to courses_url, :notice => "Successfully destroyed course."
   end

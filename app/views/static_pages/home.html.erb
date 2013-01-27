@@ -1,0 +1,52 @@
+
+
+<h1>Welcome to the Question Roulette!</h1>
+<h3>Helping students pay attention since 2013.</h3>
+
+
+<% if current_user %>
+
+<table class="gridtable">
+  <tr>
+    <th>Course Title</th>
+    <th>Students</th>
+    <th>Action</th>
+  </tr>
+
+<% for course in @courses %>
+  <tr>
+    <td><%= link_to course.title, course%></td>
+    <td><%= course.students.size %></td>
+    <td><%= link_to "Spin", "/courses/" + course.id.to_s + "/spin" %></td>
+  </tr>
+<% end %>
+</table>
+
+<p><%= link_to "New Course", new_course_path %></p>
+<% else %>
+
+	<%= form_tag sessions_path do %>
+	  <div class="field">
+	    <%= label_tag :email %><br />
+	    <%= text_field_tag :email, params[:email] %>
+	  </div>
+	  <div class="field">
+	    <%= label_tag :password %><br />
+	    <%= password_field_tag :password %>
+	  </div>
+	  <div class="actions"><%= submit_tag "Log In" %></div>
+	<% end %>
+
+
+    <ul class="slot">
+        <li><%= image_tag "Elephant.jpg", :height=>"200", :title=>"Elephant" %></li>
+        <li><%= image_tag "Moviestar.jpg", :height=>"200", :title=>"Moviestar" %></li>
+        <li><%= image_tag "Swimmer.jpg", :height=>"200", :title=>"Swimmer" %></li>
+    </ul>
+    <br/>
+    <input type="button" id="playNormal" value="Test Spin">
+    <br/>
+    <div id="winner"> </div>
+
+
+<% end %>

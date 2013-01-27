@@ -1,10 +1,19 @@
 <% title "Course" %>
 
+<table class="gridtable">
+  <tr>
+    <th>Course Title</th>
+    <th>Students</th>
+    <th>Action</th>
+  </tr>
+
 <% for course in @courses %>
-  <div class="course">
-    <h2><%= link_to course.title, course %></h2>
-    Paintings: <%= course.students.size %>
-  </div>
+  <tr>
+    <td><%= link_to course.title, "/courses/" + course.id.to_s + "/spin" %></td>
+    <td><%= course.students.size %></td>
+    <td><%= link_to "edit", course %></td>
+  </tr>
 <% end %>
+</table>
 
 <p><%= link_to "New Course", new_course_path %></p>

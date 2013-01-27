@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Auth Example</title>
+  <title>Question Roulette</title>
   <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -9,8 +9,8 @@
 <body class="<%= params[:controller] %>">
   <div id="container">
     <div id="user_nav">
-      <%= link_to "Course List", courses_path %> |
       <% if current_user %>
+      <%= link_to "Courses", courses_path %> |
         Logged in as <%= current_user.email %> |
         <%= link_to "Log out", logout_path %> |
       <% else %>

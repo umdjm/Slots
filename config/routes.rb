@@ -4,6 +4,8 @@ Slots::Application.routes.draw do
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'spin', to: 'users#new', as: 'signup'
+  match "/courses/:id/spin" => "courses#spin"
 
   resources :users
   resources :sessions
@@ -13,7 +15,7 @@ Slots::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
-  root :to => "courses#index"
+  root :to => "static_pages#home"
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

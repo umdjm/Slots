@@ -1,0 +1,14 @@
+
+
+    <ul class="slot">
+		<% for student in @course.students %>
+        	<li><%= image_tag(student.image_url(:thumb), :title => student.name.split.reverse.join(' '), :height=>"200") %> </li>
+		<% end %>
+    </ul>
+    <br/>
+    <input type="button" id="playNormal" value="Spin"/>
+    <div id="winner"> </div>
+    <br/>
+    <br/>
+
+    <td><%= link_to "Edit Students", @course %></td>

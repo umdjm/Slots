@@ -1,6 +1,10 @@
 class CoursesController < ApplicationController
   before_filter :authorize
 
+  def spin
+    @course = @current_user.courses.find(params[:id])
+  end
+
   def index
     @courses = @current_user.courses
   end

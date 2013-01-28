@@ -7,7 +7,7 @@ $(document).ready(function () {
 		    if(types.test(file.type) || types.test(file.name))
 		    {
 		    	data.context = $('<div class="upload">' + file.name + '<div class="progress"><div class="bar" style="width: 0%"></div></div></div>');
-		        $('#new_student').append(data.context);
+		        $('#NewStudents').append(data.context);
 		        data.submit();
 	    	}
 		    else

@@ -32,7 +32,7 @@ class StudentsController < ApplicationController
   def destroy
     @student = Student.find(params[:id])
     @student.destroy
-    flash[:notice] = "Successfully destroyed student."
+    flash[:notice] = "Successfully removed student."
     redirect_to @student.course
   end
 end

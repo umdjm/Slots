@@ -1,14 +1,26 @@
 
 
+<div class="row">
+  <div class="span1"></div>
+  <div class="span2 center">
+    <br/>
     <ul class="slot">
 		<% for student in @course.students %>
-        	<li><%= image_tag(student.image_url(:thumb), :title => student.name.split.reverse.join(' '), :height=>"200") %> </li>
+        	<li><%= image_tag(student.image_url(:thumb), :title => student.name.split.reverse.join(' '), :height=>"200", :class=>"studentPic") %> </li>
 		<% end %>
     </ul>
     <br/>
-    <input type="button" id="playNormal" value="Spin"/>
-    <div id="winner"> </div>
+    <input type="button" id="playNormal" value="Spin" class="btn btn-success" />
+
     <br/>
     <br/>
 
-    <td><%= link_to "Edit Students", @course %></td>
+    </div>
+</div>
+
+<div class="row">
+  <div class="span1"></div>
+  <div class="span4 center">
+        <div id="winner"> </div>
+    </div>
+</div>

@@ -1,13 +1,42 @@
-<h1>Course <%= @course.title %> </h1>
-
-<div id="students">
-  <%= render @course.students %>
+<div class="row">
+	<div class="span1"></div>
+	<div class="span10">
+		<h1>Course <%= @course.title %> </h1>
+	</div>
+	<div class="span1"></div>
 </div>
-<div class="clear"></div>
 
-<%= form_for @course.students.build do |f| %>
-  <%= f.hidden_field :course_id %>
-  <%= f.label :image, "Add Student:" %>
-  <%= f.file_field :image, multiple: true, name: "student[image]" %>
-<% end %>
+<div class="row">
+	<div class="span1"></div>
+	<div class="span10">
+		<div id="students">
+		  <%= render @course.students %>
+		</div>
+	</div>
+	<div class="span1"></div>
+</div>
 
+<div class="row">
+	<div class="span1"></div>
+	<div class="span10">
+		<span class="btn btn-success fileinput-button">
+			<%= form_for @course.students.build, :html => {:class=>"form-inline"} do |f| %>
+				<%= f.hidden_field :course_id %>
+			 	<i class="icon-plus icon-white"></i>
+            	<span>Add Students</span>
+			  <%= f.file_field :image, multiple: true, name: "student[image]" %>
+			<% end %>
+		</span>
+		    <br/>
+	</div>
+	<div class="span1"></div>
+</div>
+
+
+<div class="row">
+	<div class="span1"></div>
+	<div class="span10">
+		<div id="NewStudents"></div>
+	</div>
+	<div class="span1"></div>
+</div>

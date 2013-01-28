@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Question Roulette</title>
+  <title>Spin Students</title>
   <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body class="<%= params[:controller] %>">
-  <div id="container">
-    <div id="user_nav">
-      <% if current_user %>
-      <%= link_to "Courses", courses_path %> |
-        Logged in as <%= current_user.email %> |
-        <%= link_to "Log out", logout_path %> |
-      <% else %>
-        <%= link_to "Sign up", signup_path %> or
-        <%= link_to "log in", login_path %>
-      <% end %>
+<body>
+  <div class="container">
+
+    <div class="row topbar">
+      <div class="span1"></div>
+      <div class="span5">
+        <h2 class="titletext">Spin Students</h2>
+      </div>
+      <div class="span5">
+        <div class="navbar pull-right">
+          <div class="navbar-inner">
+            <ul class="nav pull-right">
+            <li><a href="/courses">Courses</a></li>
+            <li><a href="/logout">Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+
+      <div class="span1"></div>
+      </div>
     </div>
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, :id => "flash_#{name}" %>
-    <% end %>
+
+    <div class="row">
+      <div class="span9">
+        <% flash.each do |name, msg| %>
+          <div class="alert alert-success">
+            <%= msg %> 
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+          </div>
+        <% end %>
+      </div>
+    </div>
     <%= yield %>
   </div>
 </body>

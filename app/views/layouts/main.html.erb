@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spin Students</title>
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+
+    <div class="row topbar">
+    <div class="span1"></div>
+      <div class="span5">
+        <h2 class="titletext">Spin Students</h2>
+      </div>
+      <%= form_tag sessions_path, :class=>"form-inline span5 loginhome" do %>
+          <%= text_field_tag :email, params[:email], :placeholder=>"Email", :class=>"input-small"%>
+          <%= password_field_tag :password, nil, :placeholder=>"Password", :class=>"input-small" %>
+          <%= submit_tag "Log In", :class=>"btn btn-primary" %>
+      <% end %>
+      <div class="span1"></div>
+    </div>
+
+    <%= yield %>
+  </div>
+</body>
+</html>

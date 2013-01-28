@@ -2,11 +2,50 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+hr {
+  background: white; 
+  clear: both; 
+  float: none; 
+  width: 100%; 
+  height: 1px;
+  margin: 0 0 1.4em;
+  border: none; 
+}
 
-ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
+body{
+	font-family: "lucida grande" ,tahoma,verdana,arial,sans-serif; 
+}
+.titletext {
+	color: white;
+	font-family: "lucida grande" ,tahoma,verdana,arial,sans-serif; 
+}
+.signupbox {
+	color: white;
+	font-family: "lucida grande" ,tahoma,verdana,arial,sans-serif; 
+	padding: 9px 0;
+    background: #3b5998;
+}
+.homepage {
+      background: #f7f7f7;
+}
+.center {
+      text-align: center;
+}
+
+.loginhome {    
+	margin-top: 15px;  
+}
+
+.topbar {
+    background: #3b5998;
+ }
+
+.topbar a{
+    	color:white;
+ }
+
+h5 {
+	color: #999999;
 }
 
 .jSlots-wrapper {
@@ -14,8 +53,67 @@ ul {
     height: 200px;
     display: inline-block; /* to size correctly, can use float too, or width*/
     border: 1px solid #999;
+
+	ul{
+	    padding: 0;
+	    margin: 0;
+	    list-style: none;
+	}
 }
 
-.slot {
-    float: left;
+
+
+
+.student {
+  border: solid 1px #CCC;
+  padding: 10px;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+
+  .name {
+    padding-top: 5px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .actions {
+    font-size: 10px;
+    text-align: center;
+    color: #777;
+  }
+}
+
+.upload {
+  border-top: solid 1px #CCC;
+  width: 400px;
+  padding-top: 10px;
+  margin-top: 10px;
+
+  .progress {
+    margin-top: 8px;
+    border: solid 1px #555;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    .bar {
+      height: 10px;
+      background: #3EC144;
+      }
+    }
+  }
+
+.signupbutton {
+	min-width: 194px;
+}
+
+.btn {
+	min-width: 60px;
+}
+
+.studentPic {
+	height: 200px;
+}
+
+.navbar-inner {
+	border:none;
 }

@@ -1,0 +1,43 @@
+
+
+<div class="row signupbox">
+    <div class="span1"></div>
+    <div class="span11">
+    	<hr/>
+    	<%= link_to "Sign up", signup_path, :class=>"btn btn-success" %>
+    	<br/>
+	</div>
+</div>
+
+<div class="row homepage">
+    <div class="span1"></div>
+    <div class="span4">
+	    <br/>
+	    <strong>Spin Students</strong>
+	    	 is a fun way to cold-call students.
+	    	<br/><br/>
+	    	<p>
+		    	Get Started Now In 3 Easy Steps:
+		    	<ol>
+		    		<li>Signup (It's Free!)</li>
+		    		<li>Upload Photos (It's Easy!)</li>
+		    		<li>Spin Your Students (It's Fun!)</li>
+		    	</ol>
+	    	</p>
+	    	<p> Check out the example on the right <i class="icon-arrow-right"></i></p>
+	</div>
+
+	<div class="span5 center">
+	    <ul class="slot">
+	        <li><%= image_tag "Elephant.jpg", :height=>"200", :title=>"Elephant", :class=>"studentPic" %></li>
+	        <li><%= image_tag "Moviestar.jpg", :height=>"200", :title=>"Moviestar", :class=>"studentPic" %></li>
+	        <li><%= image_tag "Swimmer.jpg", :height=>"200", :title=>"Swimmer", :class=>"studentPic" %></li>
+	    </ul>
+	    <br/>
+	    <input type="button" id="playNormal" value="Spin" class="btn btn-primary"/>
+	    <br/>
+	    <div id="winner">
+	 	</div>
+	   	<br/>
+	</div>
+</div>

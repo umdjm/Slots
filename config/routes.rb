@@ -5,6 +5,7 @@ Slots::Application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'spin', to: 'users#new', as: 'signup'
+  get 'learn', to: 'static_pages#learn', as: 'learn'
   match "/courses/:id/spin" => "courses#spin"
 
   resources :users

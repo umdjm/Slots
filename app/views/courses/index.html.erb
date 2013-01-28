@@ -1,19 +1,24 @@
-<% title "Course" %>
 
-<table class="gridtable">
-  <tr>
-    <th>Course Title</th>
-    <th>Students</th>
-    <th>Action</th>
-  </tr>
+<div class="row">
+  <div class="span1"></div>
+  <div class="span10">
+    <br/>
+    <table class="table table-bordered">
+      <tr>
+        <th>Course Title</th>
+        <th>Students</th>
+        <th>Action</th>
+      </tr>
 
-<% for course in @courses %>
-  <tr>
-    <td><%= link_to course.title, "/courses/" + course.id.to_s + "/spin" %></td>
-    <td><%= course.students.size %></td>
-    <td><%= link_to "edit", course %></td>
-  </tr>
-<% end %>
-</table>
+    <% for course in @courses %>
+      <tr>
+        <td><%= link_to course.title, "/courses/" + course.id.to_s + "/spin" %></td>
+        <td><%= course.students.size %></td>
+        <td><%= link_to "edit", course %></td>
+      </tr>
+    <% end %>
+    </table>
+    <p><%= link_to "New Course", new_course_path, :class=>"btn" %></p>
 
-<p><%= link_to "New Course", new_course_path %></p>
+  </div>
+</div>

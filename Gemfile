@@ -9,12 +9,15 @@ gem "nifty-generators"
 gem "rmagick"
 gem "carrierwave"
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'less-rails'
 
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-	
+  gem 'therubyracer'
+  gem 'libv8'
+  gem 'twitter-bootstrap-rails'	
   gem 'jquery-fileupload-rails'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'

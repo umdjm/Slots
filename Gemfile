@@ -10,6 +10,7 @@ gem "rmagick"
 gem "carrierwave"
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'less-rails'
+gem 'fog'
 
 
 # Gems used only for assets and not required
